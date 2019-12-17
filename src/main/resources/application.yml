@@ -1,2 +1,13 @@
 server:
   port: 8777
+
+spring:
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/startup
+    username: admin-startup
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
