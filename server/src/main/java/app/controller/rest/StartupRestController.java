@@ -33,4 +33,11 @@ public class StartupRestController {
 
         return new ResponseEntity<>(arg, HttpStatus.OK);
     }
+
+    @RequestMapping("/mainPageItems")
+    public ResponseEntity<Dummy> getMainPageItems(@RequestParam int id) {
+        Dummy item = startupService.getLine(id);
+
+        return new ResponseEntity<>(item, HttpStatus.OK);
+    }
 }

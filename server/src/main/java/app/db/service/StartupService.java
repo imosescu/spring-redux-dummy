@@ -18,4 +18,8 @@ public class StartupService {
     public void addNewLine(Dummy obj) {
         dummyRepository.save(obj);
     }
+
+    public Dummy getLine(int id) {
+        return dummyRepository.getByDummyIdEquals(id);
+    }
 }

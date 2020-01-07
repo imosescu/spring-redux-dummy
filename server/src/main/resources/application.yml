@@ -11,3 +11,7 @@ spring:
     username: admin-startup
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+cors:
+  response:
+    accessControlAllowOrigin: 'http://localhost:3000'

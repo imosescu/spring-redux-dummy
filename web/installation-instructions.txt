@@ -1,3 +1,8 @@
 `Requirements`: NodeJs at least v8.10 and npm v3.5.2.
 
 npm install lodash @material-ui/core @material-ui/icons react-redux redux redux-logger (is this needed the second time?)
+
+npm install axios -> for HTTP requests
+
+
+Probably just npm install is enough as the packages are already defined in package.json

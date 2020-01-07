@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DummyRepository extends JpaRepository<Dummy, Long> {
+    Dummy getByDummyIdEquals(int id);
 }
