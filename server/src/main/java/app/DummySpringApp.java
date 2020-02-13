@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SocialStartup {
+public class DummySpringApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(SocialStartup.class, args);
+        SpringApplication.run(DummySpringApp.class, args);
     }
 }

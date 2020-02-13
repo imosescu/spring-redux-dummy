@@ -1,7 +1,7 @@
 package app.controller.rest;
 
 import app.db.entity.Dummy;
-import app.db.service.StartupService;
+import app.db.service.DummyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
-public class StartupRestController {
+public class GenericRestController {
     private AtomicInteger id = new AtomicInteger();
 
-    private StartupService startupService;
+    private DummyService dummyService;
 
     @Autowired
-    public StartupRestController(StartupService startupService) {
-        this.startupService = startupService;
+    public GenericRestController(DummyService dummyService) {
+        this.dummyService = dummyService;
     }
 
     @RequestMapping("/dummy")
@@ -29,14 +29,14 @@ public class StartupRestController {
         dummy.setDummyTitle(arg);
         dummy.setDummyAuthor("SESSION TEST");
 
-        startupService.addNewLine(dummy);
+        dummyService.addNewLine(dummy);
 
         return new ResponseEntity<>(arg, HttpStatus.OK);
     }
 
     @RequestMapping("/mainPageItems")
     public ResponseEntity<Dummy> getMainPageItems(@RequestParam int id) {
-        Dummy item = startupService.getLine(id);
+        Dummy item = dummyService.getLine(id);
 
         return new ResponseEntity<>(item, HttpStatus.OK);
     }
